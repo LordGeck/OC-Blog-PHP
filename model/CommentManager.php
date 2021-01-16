@@ -1,13 +1,14 @@
 <?php
+declare(strict_types=1);
 require_once("model/Manager.php");
 
 class CommentManager extends Manager
 {
-    public function getPostComments($blogPostId)
+    public function getPostComments(int $blogPostId)
     {
-        $database = $this->databaseConnect();
-        $request = $database->prepare('SELECT id, status, creation_date, update_date, content, blog_post_id, user_username FROM post_comments WHERE blog_post_id = ?');
-        $request->execute(array($blogPostId));
+        $request = $this->database->prepare('SELECT id, status, creation_date, update_date, content, blog_post_id, user_username FROM post_comments WHERE blog_post_id = ?');
+        $request->execute([$blogPostId]);
+
         return $request;
     }
 }
