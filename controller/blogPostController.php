@@ -5,7 +5,7 @@ require_once("model/BlogPostManager.php");
 function blogPostList()
 {
     $blogPostManager = new BlogPostManager();
-    $blogPosts = $blogPostManager->getBlogPostList();
+    $blogPosts = $blogPostManager->getBlogPosts();
 
     require("view/blogPostListView.php");
 }
