@@ -2,13 +2,21 @@
 
 <?php ob_start(); ?>
 
-<header>
-    <h1>Bienvenu sur le site de Hyacinthe Bres.</h1>
-    <img src="" alt="Photo"></img>
-    <h2>Développeur PHP.</h2>
+<header class="masthead" style="">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Hyacinthe Bres</h1>
+                    <span class="subheading">Développeur PHP</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
-<!-- content -->
+<!-- Content -->
 
 <?php $content = ob_get_clean(); ?>
 
