@@ -24,7 +24,7 @@
             {
             ?>
             <div class="post-preview">
-                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+                <a href="index.php?page=post&amp;id=<?= $data['id'] ?>">
                     <h2 class="post-title">
                         <?= htmlspecialchars($data['title']) ?>
                     </h2>
@@ -32,7 +32,7 @@
                         <?= htmlspecialchars($data['header_content']) ?>
                     </h3>
                 </a>
-                <p class="post-meta">Posté le <?= $data['creation_date'] ?>
+                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?>
             </div>
             <hr>
             <?php
