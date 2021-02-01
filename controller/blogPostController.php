@@ -9,3 +9,11 @@ function blogPostList()
 
     require("view/blogPostListView.php");
 }
+
+function blogPost()
+{
+    $blogPostManager = new BlogPostManager();
+    $blogPost = $blogPostManager->getBlogPost((int)$_GET['id']);
+
+    require("view/blogPostView.php");
+}
