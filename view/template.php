@@ -39,6 +39,7 @@
         </nav>
         <!-- Content -->
         <?= $content ?>
+        <hr>
         <!-- Footer -->
         <footer>
             <div class="container">
