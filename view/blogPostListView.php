@@ -1,25 +1,47 @@
-<?php $title = 'Liste des post de blog'; ?>
+<?php $title = 'Liste des publications'; ?>
 
 <?php ob_start(); ?>
 
-<?php
-while ($data = $blogPosts->fetch())
-{
-?>
-<div>
-    <h3>
-        <?= htmlspecialchars($data['title']) ?>
-    </h3>
-    <p>
-        <?= htmlspecialchars($data['header_content']) ?>
-    </p>
-    <p>Posté le <?= $data['creation_date'] ?></p>
-    <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Consulter l'article</a>
+<header class="masthead" style="">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Blog</h1>
+                    <span class="subheading">Liste des publications</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <?php
+            while ($data = $blogPosts->fetch())
+            {
+            ?>
+            <div class="post-preview">
+                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+                    <h2 class="post-title">
+                        <?= htmlspecialchars($data['title']) ?>
+                    </h2>
+                    <h3 class="post-subtitle">
+                        <?= htmlspecialchars($data['header_content']) ?>
+                    </h3>
+                </a>
+                <p class="post-meta">Posté le <?= $data['creation_date'] ?>
+            </div>
+            <hr>
+            <?php
+            }
+            $blogPosts->closeCursor();
+            ?>
+        </div>
+    </div>
 </div>
-<?php
-}
-$blogPosts->closeCursor();
-?>
 
 <?php $content = ob_get_clean(); ?>
 
