@@ -15,6 +15,6 @@ class BlogPostManager extends Manager
         $request = $this->database->prepare('SELECT id, title, status, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date, DATE_FORMAT(update_date, \'%d/%m/%Y à %Hh%imin%ss\') AS update_date, header_content, main_content, first_name, SUBSTRING(last_name, 1, 1) AS last_name FROM blog_posts INNER JOIN users ON username = user_username WHERE id = ?');
         $request->execute([$blogPostId]);
 
-        return $post = $request->fetch();
+        return $request->fetch();
     }
 }
