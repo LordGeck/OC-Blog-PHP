@@ -14,7 +14,7 @@
                     <h2 class="subheading">
                         <?= htmlspecialchars($blogPost['header_content']) ?>
                     </h2>
-                    <span class="meta">Publié par <?= htmlspecialchars($blogPost['first_name']) ?> <?= htmlspecialchars($blogPost['last_name']) ?>. le <?= htmlspecialchars($blogPost['update_date']) ?></span>
+                    <span class="meta">Publié par <?= htmlspecialchars($blogPost['firstname']) ?> <?= htmlspecialchars($blogPost['lastname']) ?>. le <?= htmlspecialchars($blogPost['update_date']) ?></span>
                 </div>
             </div>
         </div>
