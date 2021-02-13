@@ -33,6 +33,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/index.php?page=postList">Blog</a>
                         </li>
+                        <?php 
+                        if (!isset($_SESSION['username'])) {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php?page=signup">Enregistrement</a>
+                        </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
