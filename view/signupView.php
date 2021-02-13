@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <?php $title = 'Enregistrement'; ?>
 
 <?php ob_start(); ?>
@@ -35,25 +33,25 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Prénom</label>
-                            <input type="text" class="form-control" placeholder="Prénom" name="first_name">
+                            <input type="text" class="form-control" placeholder="Prénom" name="firstname">
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Nom de famille</label>
-                            <input type="text" class="form-control" placeholder="Nom de famille" name="last_name">
+                            <input type="text" class="form-control" placeholder="Nom de famille" name="lastname">
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe" name="password_1">
+                            <input type="password" class="form-control" placeholder="Mot de passe" name="password">
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Confirmer mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Confirmer mot de passe" name="password_2">
+                            <input type="password" class="form-control" placeholder="Confirmer mot de passe" name="password_conf">
                         </div>
                     </div>                    
                     <br>

@@ -4,6 +4,8 @@ require('controller/homeController.php');
 require('controller/blogPostController.php');
 require('controller/signupController.php');
 
+session_start();
+
 try {
     if (isset($_GET['page'])) {
         if ($_GET['page'] === 'postList') {
@@ -26,12 +28,12 @@ try {
     }
     elseif (isset($_GET['action'])) {
         if ($_GET['action'] === 'signup') {
-            if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['password_1']) && !empty($_POST['password_2'])) {
-                if ($_POST['password_1'] != $_POST['password_2']) {
+            if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['password']) && !empty($_POST['password_conf'])) {
+                if ($_POST['password'] !== $_POST['password_conf']) {
                     throw new Exception('Les mots de passe ne correspondent pas.');
                 }
                 else {
-                    signup($_POST['username'], $_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['password_1']);
+                    signup($_POST['username'], $_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['password']);
                 }                
             }
             else {
