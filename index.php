@@ -3,6 +3,7 @@ declare(strict_types=1);
 require('controller/homeController.php');
 require('controller/blogPostController.php');
 require('controller/signupController.php');
+require('controller/loginController.php');
 
 session_start();
 
@@ -22,6 +23,9 @@ try {
         elseif ($_GET['page'] === 'signup') {
             signupPage();
         }
+        elseif ($_GET['page'] === 'login') {
+            loginPage();
+        }
         else {
             throw new Exception('Cette page n\'existe pas.');
         }       
@@ -39,6 +43,17 @@ try {
             else {
                 throw new Exception('Certains champs sont vides.');
             }
+        }
+        elseif ($_GET['action'] === 'login') {
+            if (!empty($_POST['username']) && !empty($_POST['password'])) {
+                login($_POST['username'], $_POST['password']);
+            }
+            else {
+                throw new Exception('Certains champs sont vides.');
+            }
+        }
+        elseif ($_GET['action'] === 'logout') {
+            logout();
         }
     }
     else {

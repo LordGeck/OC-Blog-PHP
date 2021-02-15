@@ -34,10 +34,20 @@
                             <a class="nav-link" href="/index.php?page=postList">Blog</a>
                         </li>
                         <?php 
-                        if (!isset($_SESSION['username'])) {
+                        if (isset($_SESSION['username'])) {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php?action=logout">Déconnexion</a>
+                        </li>
+                        <?php
+                        }
+                        else {
                         ?>
                         <li class="nav-item">
                             <a class="nav-link" href="/index.php?page=signup">Enregistrement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php?page=login">Connexion</a>
                         </li>
                         <?php
                         }
