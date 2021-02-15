@@ -10,6 +10,14 @@
                 <div class="site-heading">
                     <h1>Blog</h1>
                     <span class="subheading">Liste des publications</span>
+                    <br>
+                    <?php 
+                    if (isset($_SESSION['username'])) {
+                    ?>
+                    <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">Nouvelle publication</a>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
