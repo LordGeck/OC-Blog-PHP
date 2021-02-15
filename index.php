@@ -4,6 +4,7 @@ require('controller/homeController.php');
 require('controller/blogPostController.php');
 require('controller/signupController.php');
 require('controller/loginController.php');
+require('controller/addBlogPostContoller.php');
 
 session_start();
 
@@ -26,6 +27,9 @@ try {
         elseif ($_GET['page'] === 'login') {
             loginPage();
         }
+        elseif ($_GET['page'] === 'addPost') {
+            addBlogPostPage();
+        }
         else {
             throw new Exception('Cette page n\'existe pas.');
         }       
@@ -38,7 +42,7 @@ try {
                 }
                 else {
                     signup($_POST['username'], $_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['password']);
-                }                
+                }
             }
             else {
                 throw new Exception('Certains champs sont vides.');
@@ -54,6 +58,14 @@ try {
         }
         elseif ($_GET['action'] === 'logout') {
             logout();
+        }
+        elseif ($_GET['action'] === 'addPost') {
+            if (!empty($_POST['title']) && !empty($_POST['header_content']) && !empty($_POST['main_content']) && isset($_SESSION['username'])) {
+                addBlogPost($_POST['title'], $_POST['header_content'], $_POST['main_content'], $_SESSION['username']);
+            }
+            else {
+                throw new Exception('Certains champs sont vides.');
+            }
         }
     }
     else {
