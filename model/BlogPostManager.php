@@ -4,7 +4,7 @@ require_once("model/Manager.php");
 
 class BlogPostManager extends Manager
 {
-    public function getBlogPosts(): array
+    public function getBlogPosts(): object
     {
         return $this->database->query('SELECT id, title, status, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date, DATE_FORMAT(update_date, \'%d/%m/%Y à %Hh%imin%ss\') AS update_date, header_content FROM blog_posts ORDER BY creation_date DESC');
 
