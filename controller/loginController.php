@@ -2,12 +2,12 @@
 declare(strict_types=1);
 require_once('model/UserManager.php');
 
-function loginPage() : void
+function loginPage(): void
 {
     require("view/loginView.php");
 }
 
-function login(string $username, string $password) : void
+function login(string $username, string $password): void
 {
     $userManager = new UserManager();
     $user = $userManager->getUser($username);
@@ -20,7 +20,7 @@ function login(string $username, string $password) : void
     }
 }
 
-function logout() : void
+function logout(): void
 {
     $_SESSION = array();
     session_destroy();

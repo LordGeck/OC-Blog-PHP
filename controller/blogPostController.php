@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require_once("model/BlogPostManager.php");
 
-function blogPostList() : void
+function blogPostList(): void
 {
     $blogPostManager = new BlogPostManager();
     $blogPosts = $blogPostManager->getBlogPosts();
@@ -10,7 +10,7 @@ function blogPostList() : void
     require("view/blogPostListView.php");
 }
 
-function blogPost() : void
+function blogPost(): void
 {
     $blogPostManager = new BlogPostManager();
     $blogPost = $blogPostManager->getBlogPost((int)$_GET['id']);
