@@ -17,4 +17,11 @@ class BlogPostManager extends Manager
 
         return $request->fetch();
     }
+
+    public function addBlogPost(string $title, string $header_content, string $main_content, string $username)
+    {
+        $request = $this->database->prepare('INSERT INTO blog_posts(title, creation_date, update_date, header_content, main_content, user_username) VALUES(?, NOW(), NOW(), ?, ?, ?)');
+
+        return $request->execute([$title, $header_content, $main_content, $username]);
+    }
 }
