@@ -15,27 +15,27 @@
     </div>
 </header>
 <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <form action="index.php?action=login" method="post">
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Nom d'utilisateur</label>
-                            <input type="text" class="form-control" placeholder="Nom d'utilisateur" name="username">
-                        </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form action="index.php?action=login" method="post">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Nom d'utilisateur</label>
+                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" name="username">
                     </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe" name="password">
-                        </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Mot de passe</label>
+                        <input type="password" class="form-control" placeholder="Mot de passe" name="password">
                     </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Se connecter</button>
-                </form>
-            </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
         </div>
-  </div>
+    </div>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 
