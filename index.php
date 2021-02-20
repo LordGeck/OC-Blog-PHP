@@ -18,7 +18,7 @@ try {
                 blogPost();
             }
             else {
-                throw new Exception('Id d\'article absent.');                
+                throw new Exception('Id d\'article absent.');
             }
         }
         elseif ($_GET['page'] === 'signup') {
@@ -37,15 +37,10 @@ try {
     elseif (isset($_GET['action'])) {
         if ($_GET['action'] === 'signup') {
             if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['password']) && !empty($_POST['password_conf'])) {
-                if ($_POST['password'] !== $_POST['password_conf']) {
-                    throw new Exception('Les mots de passe ne correspondent pas.');
-                }
-                else {
-                    signup($_POST['username'], $_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['password']);
-                }
+                signup($_POST['username'], $_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['password'], $_POST['password_conf']);
             }
             else {
-                throw new Exception('Certains champs sont vides.');
+                signupPage('Certains champs sont vides.', 'danger');
             }
         }
         elseif ($_GET['action'] === 'login') {
