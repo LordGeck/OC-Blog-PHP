@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require_once("model/Manager.php");
+require_once('model/Manager.php');
 
 class BlogPostManager extends Manager
 {
@@ -18,7 +18,7 @@ class BlogPostManager extends Manager
         return $request->fetch();
     }
 
-    public function addBlogPost(string $title, string $headerContent, string $mainContent, string $username): array
+    public function addBlogPost(string $title, string $headerContent, string $mainContent, string $username): bool
     {
         $request = $this->database->prepare('INSERT INTO blog_posts(title, creation_date, update_date, header_content, main_content, user_username) VALUES(?, NOW(), NOW(), ?, ?, ?)');
 

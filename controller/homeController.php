@@ -3,5 +3,5 @@ declare(strict_types=1);
 
 function home(): void
 {
-    require("view/homeView.php");
+    require('view/homeView.php');
 }
