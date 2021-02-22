@@ -40,7 +40,7 @@
                         <?= htmlspecialchars($data['header_content']) ?>
                     </h3>
                 </a>
-                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?>
+                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?></p>
             </div>
             <hr>
             <?php
