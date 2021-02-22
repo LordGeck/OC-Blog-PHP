@@ -13,6 +13,7 @@ function login(string $username, string $password): void
     $user = $userManager->getUser($username);
     if ($user && password_verify($password, $user['password_hash'])) {
         $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
         header('Location: index.php');
     }
     else {
