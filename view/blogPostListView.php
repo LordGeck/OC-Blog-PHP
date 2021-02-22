@@ -12,7 +12,7 @@
                     <span class="subheading">Liste des publications</span>
                     <br>
                     <?php 
-                    if (isset($_SESSION['username'])) {
+                    if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
                     ?>
                     <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">Nouvelle publication</a>
                     <?php
