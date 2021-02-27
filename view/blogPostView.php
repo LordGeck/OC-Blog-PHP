@@ -31,6 +31,43 @@
         </div>
     </div>
 </article>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <?php
+            if ($postComments->rowCount() > 0) {
+                while ($data = $postComments->fetch())
+                {
+            ?>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?= htmlspecialchars($data['firstname']) ?> <?= htmlspecialchars($data['lastname']) ?>.</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Le <?= htmlspecialchars($data['update_date']) ?></h6>
+                    <p class="card-text"><?= htmlspecialchars($data['content']) ?></p>
+                </div>
+            </div>
+            <?php
+                }
+                $postComments->closeCursor();
+            }
+            else {
+            ?>
+            <p class="text-muted">Aucun commentaire pour cet article.</p>
+            <?php
+            }
+            ?>
+            <br>
+            <?php
+            if (isset($_SESSION['username'])) {
+            ?>
+            <a class="btn btn-primary text-center" href="#" role="button">Commenter</a>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 
