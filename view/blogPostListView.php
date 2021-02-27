@@ -12,7 +12,7 @@
                     <span class="subheading">Liste des publications</span>
                     <br>
                     <?php 
-                    if (isset($_SESSION['username'])) {
+                    if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
                     ?>
                     <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">Nouvelle publication</a>
                     <?php
@@ -40,7 +40,7 @@
                         <?= htmlspecialchars($data['header_content']) ?>
                     </h3>
                 </a>
-                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?>
+                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?></p>
             </div>
             <hr>
             <?php

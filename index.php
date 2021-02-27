@@ -4,7 +4,8 @@ require('controller/homeController.php');
 require('controller/blogPostController.php');
 require('controller/signupController.php');
 require('controller/loginController.php');
-require('controller/addBlogPostContoller.php');
+require('controller/addBlogPostController.php');
+require('controller/adminController.php');
 
 session_start();
 
@@ -27,12 +28,18 @@ try {
         elseif ($_GET['page'] === 'login') {
             loginPage();
         }
-        elseif ($_GET['page'] === 'addPost') {
-            addBlogPostPage();
+        // Admin section
+        elseif ($_SESSION['role'] === 'ADMIN') {
+            if ($_GET['page'] === 'admin') {
+                adminPage();
+            }
+            elseif ($_GET['page'] === 'addPost') {
+                addBlogPostPage();
+            }
         }
         else {
             throw new Exception('Cette page n\'existe pas.');
-        }       
+        }
     }
     elseif (isset($_GET['action'])) {
         if ($_GET['action'] === 'signup') {
@@ -54,14 +61,18 @@ try {
         elseif ($_GET['action'] === 'logout') {
             logout();
         }
-        elseif ($_GET['action'] === 'addPost') {
-            if (!empty($_POST['title']) && !empty($_POST['header_content']) && !empty($_POST['main_content']) && isset($_SESSION['username'])) {
-                addBlogPost($_POST['title'], $_POST['header_content'], $_POST['main_content'], $_SESSION['username']);
-            }
-            else {
-                throw new Exception('Certains champs sont vides.');
+        // Admin section
+        elseif ($_SESSION['role'] === 'ADMIN') {
+            if ($_GET['action'] === 'addPost') {
+                if (!empty($_POST['title']) && !empty($_POST['header_content']) && !empty($_POST['main_content']) && isset($_SESSION['username'])) {
+                    addBlogPost($_POST['title'], $_POST['header_content'], $_POST['main_content'], $_SESSION['username']);
+                }
+                else {
+                    throw new Exception('Certains champs sont vides.');
+                }
             }
         }
+        
     }
     else {
         home();
