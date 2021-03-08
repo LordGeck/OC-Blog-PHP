@@ -20,7 +20,7 @@
         </div>
     </div>
 </header>
-<?php require('message.php'); ?>
+<?php require 'message.php'; ?>
 <article>
     <div class="container">
         <div class="row">
@@ -81,4 +81,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require 'template.php'; ?>

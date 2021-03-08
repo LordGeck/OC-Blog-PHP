@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-require_once('model/UserManager.php');
+require_once 'model/UserManager.php';
 
 function signupPage(string $message = null, string $type = null): void
 {
-    require('view/signupView.php');
+    require 'view/signupView.php';
 }
 
 function signup(string $username, string $email, string $firstname, string $lastname, string $password, string $passwordConf): void
