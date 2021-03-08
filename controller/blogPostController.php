@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once('model/BlogPostManager.php');
+require_once('model/CommentManager.php');
 
 function blogPostList(): void
 {
@@ -15,6 +16,8 @@ function blogPost(): void
     $blogPostManager = new BlogPostManager();
     $blogPost = $blogPostManager->getBlogPost((int)$_GET['id']);
     if ($blogPost) {
+        $commentManager = new CommentManager();
+        $postComments = $commentManager->getPostComments((int)$_GET['id'], 'PUBLISHED');
         require('view/blogPostView.php');
     }
     else {
