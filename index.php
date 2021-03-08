@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
-require('controller/homeController.php');
-require('controller/blogPostController.php');
-require('controller/signupController.php');
-require('controller/loginController.php');
-require('controller/addBlogPostController.php');
-require('controller/adminController.php');
-require('controller/commentController.php');
+require 'controller/homeController.php';
+require 'controller/blogPostController.php';
+require 'controller/signupController.php';
+require 'controller/loginController.php';
+require 'controller/addBlogPostController.php';
+require 'controller/adminController.php';
+require 'controller/commentController.php';
 
 session_start();
 

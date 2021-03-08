@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-require_once('model/UserManager.php');
+require_once 'model/UserManager.php';
 
 function loginPage(): void
 {
-    require('view/loginView.php');
+    require 'view/loginView.php';
 }
 
 function login(string $username, string $password): void

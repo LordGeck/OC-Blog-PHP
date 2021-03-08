@@ -3,5 +3,5 @@ declare(strict_types=1);
 
 function adminPage(): void
 {
-    require('view/adminView.php');
+    require 'view/adminView.php';
 }
