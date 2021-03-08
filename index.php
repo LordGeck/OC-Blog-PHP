@@ -6,6 +6,7 @@ require('controller/signupController.php');
 require('controller/loginController.php');
 require('controller/addBlogPostController.php');
 require('controller/adminController.php');
+require('controller/commentController.php');
 
 session_start();
 
@@ -60,6 +61,19 @@ try {
         }
         elseif ($_GET['action'] === 'logout') {
             logout();
+        }
+        elseif ($_GET['action'] === 'addComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_POST['content']) && isset($_SESSION['username'])) {
+                    addComment($_POST['content'], $_GET['id'], $_SESSION['username']);
+                }
+                else {
+                    blogPost('Certains champs sont vides.', 'danger');
+                }
+            }
+            else {
+                throw new Exception('Aucun article spécifié.');
+            }
         }
         // Admin section
         elseif ($_SESSION['role'] === 'ADMIN') {
