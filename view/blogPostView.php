@@ -20,6 +20,7 @@
         </div>
     </div>
 </header>
+<?php require('message.php'); ?>
 <article>
     <div class="container">
         <div class="row">
@@ -61,7 +62,16 @@
             <?php
             if (isset($_SESSION['username'])) {
             ?>
-            <a class="btn btn-primary text-center" href="#" role="button">Commenter</a>
+            <form action="index.php?action=addComment&amp;id=<?= $blogPost['id'] ?>" method="post">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Commenter</label>
+                        <textarea class="form-control" placeholder="Commenter" name="content"></textarea>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
             <?php
             }
             ?>
