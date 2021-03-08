@@ -11,7 +11,7 @@ function blogPostList(): void
     require('view/blogPostListView.php');
 }
 
-function blogPost(): void
+function blogPost(string $message = null, string $type = null): void
 {
     $blogPostManager = new BlogPostManager();
     $blogPost = $blogPostManager->getBlogPost((int)$_GET['id']);
