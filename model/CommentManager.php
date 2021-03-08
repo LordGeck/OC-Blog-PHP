@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require_once('model/Manager.php');
+require_once 'model/Manager.php';
 
 class CommentManager extends Manager
 {
@@ -10,5 +10,12 @@ class CommentManager extends Manager
         $request->execute([$blogPostId, $status]);
 
         return $request;
+    }
+
+    public function addPostComment(string $content, int $blogPostId, string $username): bool
+    {
+        $request = $this->database->prepare('INSERT INTO post_comments(content, creation_date, update_date, blog_post_id, user_username) VALUES(?, NOW(), NOW(), ?, ?)');
+
+        return $request->execute([$content, $blogPostId, $username]);
     }
 }
