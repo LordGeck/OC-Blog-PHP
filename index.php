@@ -85,6 +85,14 @@ try {
                     throw new Exception('Certains champs sont vides.');
                 }
             }
+            elseif ($_GET['action'] === 'validateComment') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    validateComment($_GET['id']);                    
+                }
+                else {
+                    throw new Exception('Aucun commentaire spécifié.');
+                }
+            }
         }
         
     }
