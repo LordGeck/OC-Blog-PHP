@@ -24,3 +24,15 @@ function blogPost(string $message = null, string $type = null): void
         throw new Exception('Ce post n\'existe pas.');
     }
 }
+
+function addBlogPostPage(): void
+{
+    require 'view/addBlogPostView.php' ;
+}
+
+function addBlogPost(string $title, string $headerContent, string $mainContent, string $username): void
+{
+    $blogPostManager = new BlogPostManager();
+    $blogPostManager->addBlogPost($title, $headerContent, $mainContent, $username);
+    header('Location: index.php?page=postList');
+}
