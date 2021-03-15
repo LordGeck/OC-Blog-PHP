@@ -24,3 +24,29 @@ function blogPost(string $message = null, string $type = null): void
         throw new Exception('Ce post n\'existe pas.');
     }
 }
+
+function addBlogPostPage(): void
+{
+    require 'view/addBlogPostView.php' ;
+}
+
+function addBlogPost(string $title, string $headerContent, string $mainContent, string $username): void
+{
+    $blogPostManager = new BlogPostManager();
+    $blogPostManager->addBlogPost($title, $headerContent, $mainContent, $username);
+    header('Location: index.php?page=postList');
+}
+
+function editBlogPostPage(string $message = null, string $type = null): void
+{
+    $blogPostManager = new BlogPostManager();
+    $blogPost = $blogPostManager->getBlogPost((int)$_GET['id']);
+    require 'view/editBlogPostView.php' ;
+}
+
+function editBlogPost(string $blogPostId, string $title, string $headerContent, string $mainContent): void
+{
+    $blogPostManager = new BlogPostManager();
+    $blogPostManager->setBlogPost((int)$blogPostId, $title, $headerContent, $mainContent);
+    blogPost('Article modifié avec succès', 'success');
+}
