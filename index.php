@@ -36,6 +36,14 @@ try {
             elseif ($_GET['page'] === 'addPost') {
                 addBlogPostPage();
             }
+            elseif ($_GET['page'] === 'editPost') {
+                if (isset($_GET['id'])) {
+                    editBlogPostPage();
+                }
+                else {
+                    throw new Exception('Id d\'article absent.');
+                }
+            }
         }
         else {
             throw new Exception('Cette page n\'existe pas.');
@@ -82,6 +90,19 @@ try {
                 }
                 else {
                     throw new Exception('Certains champs sont vides.');
+                }
+            }
+            elseif ($_GET['action'] === 'editPost') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    if (!empty($_POST['title']) && !empty($_POST['header_content']) && !empty($_POST['main_content'])) {
+                        editBlogPost( $_GET['id'], $_POST['title'], $_POST['header_content'], $_POST['main_content']);
+                    }
+                    else {
+                        editBlogPostPage('Certains champs sont vides.', 'danger');
+                    }
+                }
+                else {
+                    throw new Exception('Aucun article spécifié.');
                 }
             }
             elseif ($_GET['action'] === 'validateComment') {
