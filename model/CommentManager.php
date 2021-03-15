@@ -18,4 +18,11 @@ class CommentManager extends Manager
 
         return $request->execute([$content, $blogPostId, $username]);
     }
+
+    public function setCommentStatus(int $commentId, string $status): bool
+    {
+        $request = $this->database->prepare('UPDATE post_comments SET status = ? WHERE id = ?');
+
+        return $request->execute([$status, $commentId]);
+    }
 }
