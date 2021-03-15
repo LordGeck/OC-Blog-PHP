@@ -4,7 +4,6 @@ require 'controller/homeController.php';
 require 'controller/blogPostController.php';
 require 'controller/signupController.php';
 require 'controller/loginController.php';
-require 'controller/addBlogPostController.php';
 require 'controller/adminController.php';
 require 'controller/commentController.php';
 require 'controller/errorController.php';
@@ -37,6 +36,14 @@ try {
             }
             elseif ($_GET['page'] === 'addPost') {
                 addBlogPostPage();
+            }
+            elseif ($_GET['page'] === 'editPost') {
+                if (isset($_GET['id'])) {
+                    editBlogPostPage();
+                }
+                else {
+                    throw new Exception('Id d\'article absent.');
+                }
             }
         }
         else {
@@ -84,6 +91,27 @@ try {
                 }
                 else {
                     throw new Exception('Certains champs sont vides.');
+                }
+            }
+            elseif ($_GET['action'] === 'editPost') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    if (!empty($_POST['title']) && !empty($_POST['header_content']) && !empty($_POST['main_content'])) {
+                        editBlogPost($_GET['id'], $_POST['title'], $_POST['header_content'], $_POST['main_content']);
+                    }
+                    else {
+                        editBlogPostPage('Certains champs sont vides.', 'danger');
+                    }
+                }
+                else {
+                    throw new Exception('Aucun article spécifié.');
+                }
+            }
+            elseif ($_GET['action'] === 'validateComment') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    validateComment($_GET['id']);                    
+                }
+                else {
+                    throw new Exception('Aucun commentaire spécifié.');
                 }
             }
         }

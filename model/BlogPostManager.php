@@ -24,4 +24,11 @@ class BlogPostManager extends Manager
 
         return $request->execute([$title, $headerContent, $mainContent, $username]);
     }
+
+    public function setBlogPost(int $blogPostId, string $title, string $headerContent, string $mainContent): bool
+    {
+        $request = $this->database->prepare('UPDATE blog_posts SET title = ? , update_date = NOW() , header_content = ? , main_content = ? WHERE id = ?');
+
+        return $request->execute([$title, $headerContent, $mainContent, $blogPostId]);
+    }
 }
