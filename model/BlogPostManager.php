@@ -10,7 +10,7 @@ class BlogPostManager extends Manager
 
     }
 
-    public function getBlogPost(int $blogPostId): array|bool
+    public function getBlogPost(int $blogPostId): array|false
     {
         $request = $this->database->prepare('SELECT id, title, status, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date, DATE_FORMAT(update_date, \'%d/%m/%Y à %Hh%imin%ss\') AS update_date, header_content, main_content, firstname, SUBSTRING(lastname, 1, 1) AS lastname FROM blog_posts INNER JOIN users ON username = user_username WHERE id = ?');
         $request->execute([$blogPostId]);

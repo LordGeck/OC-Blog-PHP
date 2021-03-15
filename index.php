@@ -6,6 +6,7 @@ require 'controller/signupController.php';
 require 'controller/loginController.php';
 require 'controller/adminController.php';
 require 'controller/commentController.php';
+require 'controller/errorController.php';
 
 session_start();
 
@@ -121,5 +122,5 @@ try {
     }
 }
 catch(Exception $e) {
-    echo 'Erreur : ' . $e->getMessage();
+    error($e);
 }
