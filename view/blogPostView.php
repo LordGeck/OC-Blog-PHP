@@ -32,7 +32,7 @@
         </div>
     </div>
 </article>
-<?php 
+<?php
 if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
 ?>
 <div class="container">

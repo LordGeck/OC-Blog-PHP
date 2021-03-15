@@ -95,7 +95,7 @@ try {
             elseif ($_GET['action'] === 'editPost') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     if (!empty($_POST['title']) && !empty($_POST['header_content']) && !empty($_POST['main_content'])) {
-                        editBlogPost( $_GET['id'], $_POST['title'], $_POST['header_content'], $_POST['main_content']);
+                        editBlogPost($_GET['id'], $_POST['title'], $_POST['header_content'], $_POST['main_content']);
                     }
                     else {
                         editBlogPostPage('Certains champs sont vides.', 'danger');
