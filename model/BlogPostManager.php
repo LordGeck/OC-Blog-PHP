@@ -31,4 +31,11 @@ class BlogPostManager extends Manager
 
         return $request->execute([$title, $headerContent, $mainContent, $blogPostId]);
     }
+
+    public function deleteBlogPost(int $blogPostId): bool
+    {
+        $request = $this->database->prepare('DELETE FROM blog_posts WHERE id = ?');
+
+        return $request->execute([$blogPostId]);
+    }
 }
