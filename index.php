@@ -43,8 +43,7 @@ try {
         }
     } elseif (isset($_GET['action'])) {
         if ($_GET['action'] === 'signup') {
-            if (
-                !empty($_POST['username']) &&
+            if (!empty($_POST['username']) &&
                 !empty($_POST['email']) &&
                 !empty($_POST['firstname']) &&
                 !empty($_POST['lastname']) &&
@@ -84,8 +83,7 @@ try {
         // Admin section
         elseif ($_SESSION['role'] === 'ADMIN') {
             if ($_GET['action'] === 'addPost') {
-                if (
-                    !empty($_POST['title']) &&
+                if (!empty($_POST['title']) &&
                     !empty($_POST['header_content']) &&
                     !empty($_POST['main_content']) &&
                     isset($_SESSION['username'])
@@ -101,8 +99,7 @@ try {
                 }
             } elseif ($_GET['action'] === 'editPost') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    if (
-                        !empty($_POST['title']) &&
+                    if (!empty($_POST['title']) &&
                         !empty($_POST['header_content']) &&
                         !empty($_POST['main_content'])
                     ) {
