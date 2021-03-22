@@ -28,13 +28,17 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Chapô</label>
-                        <textarea class="form-control" placeholder="Chapô" name="header_content"><?= htmlspecialchars($blogPost['header_content']) ?></textarea>
+                        <textarea class="form-control" placeholder="Chapô" name="header_content">
+                            <?= htmlspecialchars($blogPost['header_content']) ?>
+                        </textarea>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Article</label>
-                        <textarea class="form-control" placeholder="Article" name="main_content"><?= htmlspecialchars($blogPost['main_content']) ?></textarea>
+                        <textarea class="form-control" placeholder="Article" name="main_content">
+                            <?= htmlspecialchars($blogPost['main_content']) ?>
+                        </textarea>
                     </div>
                 </div>
                 <br>

@@ -93,7 +93,9 @@
                                 <?php 
                                 if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
                                 ?>
-                                <a class="btn btn-secondary text-center" href="/index.php?page=admin" role="button">Administration</a>
+                                <a class="btn btn-secondary text-center" href="/index.php?page=admin" role="button">
+                                    Administration
+                                </a>
                                 <?php
                                 }
                                 ?>

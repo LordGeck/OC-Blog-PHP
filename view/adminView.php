@@ -38,10 +38,17 @@
             ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($comment['firstname']) ?> <?= htmlspecialchars($comment['lastname']) ?>.</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Le <?= htmlspecialchars($comment['update_date']) ?></h6>
+                    <h5 class="card-title">
+                        <?= htmlspecialchars($comment['firstname']) ?>
+                        <?= htmlspecialchars($comment['lastname']) ?>.
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        Le <?= htmlspecialchars($comment['update_date']) ?>
+                    </h6>
                     <p class="card-text"><?= htmlspecialchars($comment['content']) ?></p>
-                    <a class="btn btn-secondary text-center" href="index.php?action=validateComment&amp;id=<?= $comment['id'] ?>" role="button">Valider</a>
+                    <a class="btn btn-secondary text-center" href="index.php?action=validateComment&amp;id=<?= $comment['id'] ?>" role="button">
+                        Valider
+                    </a>
                 </div>
             </div>
             <?php
