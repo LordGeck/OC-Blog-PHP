@@ -64,7 +64,7 @@ try {
                 login($_POST['username'], $_POST['password']);
             }
             else {
-                throw new Exception('Certains champs sont vides.');
+                loginPage('Certains champs sont vides.', 'danger');
             }
         }
         elseif ($_GET['action'] === 'logout') {
@@ -90,7 +90,7 @@ try {
                     addBlogPost($_POST['title'], $_POST['header_content'], $_POST['main_content'], $_SESSION['username']);
                 }
                 else {
-                    throw new Exception('Certains champs sont vides.');
+                    addBlogPostPage('Certains champs sont vides.', 'danger');
                 }
             }
             elseif ($_GET['action'] === 'editPost') {
