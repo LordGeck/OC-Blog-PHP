@@ -15,6 +15,6 @@ function sendMail(string $name, string $email, string $message): void
         'Reply-To' => $_POST['email'],
         'X-Mailer' => 'PHP/' . phpversion()
     );
-    mail('lordgeck@gmail.com', $subject , str_replace("\n.", "\n..", $message), $headers);
+    mail('lordgeck@gmail.com', $subject, str_replace("\n.", "\n..", $message), $headers);
     home('E-mail envoyé.', 'success');
 }
