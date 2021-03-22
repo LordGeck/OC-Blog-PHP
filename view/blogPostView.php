@@ -47,7 +47,9 @@ if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
             <a class="btn btn-primary" href="index.php?page=editPost&amp;id=<?= $blogPost['id'] ?>" role="button">
                 Modifier
             </a>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#postDelete">Supprimer</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#postDelete">
+                Supprimer
+            </button>
             <div class="modal fade" id="postDelete" tabindex="-1" role="dialog" aria-labelledby="postDelete" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
