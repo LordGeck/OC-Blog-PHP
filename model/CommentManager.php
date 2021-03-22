@@ -25,4 +25,11 @@ class CommentManager extends Manager
 
         return $request->execute([$status, $commentId]);
     }
+
+    public function deletePostComments(int $blogPostId): bool
+    {
+        $request = $this->database->prepare('DELETE FROM post_comments WHERE blog_post_id = ?');
+
+        return $request->execute([$blogPostId]);
+    }
 }

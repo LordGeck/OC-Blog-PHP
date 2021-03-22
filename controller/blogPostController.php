@@ -3,7 +3,7 @@ declare(strict_types=1);
 require_once 'model/BlogPostManager.php';
 require_once 'model/CommentManager.php';
 
-function blogPostList(): void
+function blogPostList(string $message = null, string $type = null): void
 {
     $blogPostManager = new BlogPostManager();
     $blogPosts = $blogPostManager->getBlogPosts();
@@ -49,4 +49,13 @@ function editBlogPost(string $blogPostId, string $title, string $headerContent, 
     $blogPostManager = new BlogPostManager();
     $blogPostManager->setBlogPost((int)$blogPostId, $title, $headerContent, $mainContent);
     blogPost('Article modifié avec succès', 'success');
+}
+
+function deleteBlogPost(string $blogPostId): void
+{
+    $commentManager = new CommentManager();
+    $commentManager->deletePostComments((int)$blogPostId);
+    $blogPostManager = new BlogPostManager();
+    $blogPostManager->deleteBlogPost((int)$blogPostId);
+    blogPostList('Article supprimé avec succès', 'success');
 }

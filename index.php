@@ -106,6 +106,14 @@ try {
                     throw new Exception('Aucun article spécifié.');
                 }
             }
+            elseif ($_GET['action'] === 'deletePost') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    deleteBlogPost($_GET['id']);
+                }
+                else {
+                    throw new Exception('Aucun article spécifié.');
+                }
+            }
             elseif ($_GET['action'] === 'validateComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     validateComment($_GET['id']);                    

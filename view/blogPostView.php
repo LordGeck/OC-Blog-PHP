@@ -14,7 +14,13 @@
                     <h2 class="subheading">
                         <?= htmlspecialchars($blogPost['header_content']) ?>
                     </h2>
-                    <span class="meta">Publié par <?= htmlspecialchars($blogPost['firstname']) ?> <?= htmlspecialchars($blogPost['lastname']) ?>. le <?= htmlspecialchars($blogPost['update_date']) ?></span>
+                    <span class="meta">
+                        Publié par
+                        <?= htmlspecialchars($blogPost['firstname']) ?>
+                        <?= htmlspecialchars($blogPost['lastname']) . '.' ?>
+                        le
+                        <?= htmlspecialchars($blogPost['update_date']) ?>
+                    </span>
                 </div>
             </div>
         </div>
@@ -38,7 +44,32 @@ if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <a class="btn btn-primary" href="index.php?page=editPost&amp;id=<?= $blogPost['id'] ?>" role="button">Modifier</a>
+            <a class="btn btn-primary" href="index.php?page=editPost&amp;id=<?= $blogPost['id'] ?>" role="button">
+                Modifier
+            </a>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#postDelete">Supprimer</button>
+            <div class="modal fade" id="postDelete" tabindex="-1" role="dialog" aria-labelledby="postDelete" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                Voulez-vous vraiment supprimer l'article ?
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Non
+                            </button>
+                            <a class="btn btn-danger" href="index.php?action=deletePost&amp;id=<?= $blogPost['id'] ?>" role="button">
+                                Oui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -56,9 +87,17 @@ if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
             ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($data['firstname']) ?> <?= htmlspecialchars($data['lastname']) ?>.</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Le <?= htmlspecialchars($data['update_date']) ?></h6>
-                    <p class="card-text"><?= htmlspecialchars($data['content']) ?></p>
+                    <h5 class="card-title">
+                        <?= htmlspecialchars($data['firstname']) ?>
+                        <?= htmlspecialchars($data['lastname']) . '.' ?>
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        Le
+                        <?= htmlspecialchars($data['update_date']) ?>
+                    </h6>
+                    <p class="card-text">
+                        <?= htmlspecialchars($data['content']) ?>
+                    </p>
                 </div>
             </div>
             <?php
