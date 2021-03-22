@@ -6,7 +6,9 @@ class UserManager extends Manager
 {
     public function getUser(string $username): array|false
     {
-        $request = $this->database->prepare('SELECT username, email, firstname, lastname, password_hash, role FROM users WHERE username = ?');
+        $request = $this->database->prepare('SELECT username, email, firstname, lastname, password_hash, role
+            FROM users
+            WHERE username = ?');
         $request->execute([$username]);
 
         return $request->fetch();
@@ -14,7 +16,9 @@ class UserManager extends Manager
 
     public function addUser(string $username, string $email, string $firstname, string $lastname, string $passwordHash): bool
     {
-        $request = $this->database->prepare('INSERT INTO users(username, email, firstname, lastname, password_hash) VALUES(?, ?, ?, ?, ?)');
+        $request = $this->database->prepare('INSERT INTO users
+            (username, email, firstname, lastname, password_hash)
+            VALUES(?, ?, ?, ?, ?)');
 
         return $request->execute([$username, $email, $firstname, $lastname, $passwordHash]);
     }
