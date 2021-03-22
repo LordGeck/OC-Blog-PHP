@@ -13,7 +13,7 @@ session_start();
 try {
     if (isset($_GET['page'])) {
         if ($_GET['page'] === 'postList') {
-            blogPostList(); 
+            blogPostList();
         } elseif ($_GET['page'] === 'post') {
             if (isset($_GET['id'])) {
                 blogPost();
