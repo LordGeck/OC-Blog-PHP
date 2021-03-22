@@ -25,7 +25,7 @@ function blogPost(string $message = null, string $type = null): void
     }
 }
 
-function addBlogPostPage(): void
+function addBlogPostPage(string $message = null, string $type = null): void
 {
     require 'view/addBlogPostView.php' ;
 }
@@ -34,7 +34,7 @@ function addBlogPost(string $title, string $headerContent, string $mainContent, 
 {
     $blogPostManager = new BlogPostManager();
     $blogPostManager->addBlogPost($title, $headerContent, $mainContent, $username);
-    header('Location: index.php?page=postList');
+    blogPostList();
 }
 
 function editBlogPostPage(string $message = null, string $type = null): void

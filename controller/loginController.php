@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require_once 'model/UserManager.php';
 
-function loginPage(): void
+function loginPage(string $message = null, string $type = null): void
 {
     require 'view/loginView.php';
 }
@@ -14,10 +14,10 @@ function login(string $username, string $password): void
     if ($user && password_verify($password, $user['password_hash'])) {
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
-        header('Location: index.php');
+        home();
     }
     else {
-        throw new Exception('Nom d\'utilisateur ou mot de passe incorrect');
+        loginPage('Nom d\'utilisateur ou mot de passe incorrect', 'danger');
     }
 }
 
@@ -25,5 +25,5 @@ function logout(): void
 {
     $_SESSION = array();
     session_destroy();
-    header('Location: index.php');
+    home();
 }
