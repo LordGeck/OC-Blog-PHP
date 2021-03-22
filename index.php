@@ -79,6 +79,12 @@ try {
             } else {
                 throw new Exception('Aucun article spécifié.');
             }
+        } elseif ($_GET['action'] === 'sendMail') {
+            if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+                sendMail($_POST['name'], $_POST['email'], $_POST['message']);
+            } else {
+                home('Certains champs sont vides.', 'danger');
+            }
         }
         // Admin section
         elseif ($_SESSION['role'] === 'ADMIN') {
