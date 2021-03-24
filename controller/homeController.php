@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+use PHPMailer\PHPMailer\PHPMailer;
+require 'vendor/autoload.php';
 
 function home(string $message = null, string $type = null): void
 {
@@ -8,13 +10,27 @@ function home(string $message = null, string $type = null): void
 
 function sendMail(string $name, string $email, string $message): void
 {
-    $subject = 'Formulaire de contact : ' . $_POST['name'];
-    $message = wordwrap($_POST['message'], 70);
-    $headers = array(
-        'From' => 'contact@blogphp.com',
-        'Reply-To' => $_POST['email'],
-        'X-Mailer' => 'PHP/' . phpversion()
-    );
-    mail('lordgeck@gmail.com', $subject, str_replace("\n.", "\n..", $message), $headers);
-    home('E-mail envoyé.', 'success');
+    $mail = new PHPMailer;
+    $mail->setFrom('admin@blogphp.com');
+    $mail->addAddress('adress@gmail.com');
+    $mail->addReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = 'Formulaire de contact : message de ' . $_POST['name'];
+    $mail->Body = $_POST['message'];
+    $mail->IsSMTP();
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = 'ssl://smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Port = 465;
+
+    //Set your existing gmail address as user name
+    $mail->Username = 'adress@gmail.com';
+
+    //Set the password of your gmail address here
+    $mail->Password = 'PASSWORD';
+    if(!$mail->send()) {
+        home('Erreur d\'envoi.', 'danger');
+    } else {
+        home('E-mail envoyé.', 'success');
+    }
+    
 }
