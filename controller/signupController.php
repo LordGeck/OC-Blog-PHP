@@ -10,11 +10,9 @@ function signupPage(string $message = null, string $type = null): void
 function signup(string $username, string $email, string $firstname, string $lastname, string $password, string $passwordConf): void
 {
     $userManager = new UserManager();
-    $user = $userManager->getUser($username);
+    $user = $userManager->checkUser($username, $email);
     if ($user) {
-        if ($user['email']) {
-            signupPage('Le nom d\'utilisateur ou l\'email sont déjà utilisé.', 'danger');
-        }
+        signupPage('Le nom d\'utilisateur ou l\'email sont déjà utilisé.', 'danger');
     }
     elseif ($password !== $passwordConf) {
         signupPage('Les mots de passe ne correspondent pas.', 'danger');
