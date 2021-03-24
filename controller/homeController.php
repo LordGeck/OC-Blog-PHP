@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 use PHPMailer\PHPMailer\PHPMailer;
+
 require 'vendor/autoload.php';
 
 function home(string $message = null, string $type = null): void
@@ -27,10 +28,9 @@ function sendMail(string $name, string $email, string $message): void
 
     //Set the password of your gmail address here
     $mail->Password = 'PASSWORD';
-    if(!$mail->send()) {
+    if (!$mail->send()) {
         home('Erreur d\'envoi.', 'danger');
     } else {
         home('E-mail envoyé.', 'success');
     }
-    
 }
