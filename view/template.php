@@ -33,15 +33,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/index.php?page=postList">Blog</a>
                         </li>
-                        <?php 
+                        <?php
                         if (isset($_SESSION['username'])) {
                         ?>
                         <li class="nav-item">
                             <a class="nav-link" href="/index.php?action=logout">Déconnexion</a>
                         </li>
                         <?php
-                        }
-                        else {
+                        } else {
                         ?>
                         <li class="nav-item">
                             <a class="nav-link" href="/index.php?page=signup">Enregistrement</a>
@@ -90,7 +89,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <?php 
+                                <?php
                                 if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
                                 ?>
                                 <a class="btn btn-secondary text-center" href="/index.php?page=admin" role="button">

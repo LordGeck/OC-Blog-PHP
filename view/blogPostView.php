@@ -84,8 +84,7 @@ if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
         <div class="col-lg-8 col-md-10 mx-auto">
             <?php
             if ($postComments->rowCount() > 0) {
-                while ($data = $postComments->fetch())
-                {
+                while ($data = $postComments->fetch()) {
             ?>
             <div class="card">
                 <div class="card-body">
@@ -105,8 +104,7 @@ if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
             <?php
                 }
                 $postComments->closeCursor();
-            }
-            else {
+            } else {
             ?>
             <p class="text-muted">Aucun commentaire pour cet article.</p>
             <?php

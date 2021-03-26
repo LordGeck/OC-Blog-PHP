@@ -20,8 +20,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <h2>Commentaires en attente de validation :</h2>
             <?php
-            while ($post = $blogPosts->fetch())
-            {
+            while ($post = $blogPosts->fetch()) {
                 $postComments = $commentManager->getPostComments($post['id'], 'PENDING');
                 if ($postComments->rowCount() > 0) {
             ?>
@@ -33,8 +32,7 @@
                 </a>
             </div>
             <?php
-                    while ($comment = $postComments->fetch())
-                    {
+                    while ($comment = $postComments->fetch()) {
             ?>
             <div class="card">
                 <div class="card-body">
