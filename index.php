@@ -26,7 +26,7 @@ try {
             loginPage();
         }
         // Admin section
-        elseif ($_SESSION['role'] === 'ADMIN') {
+        elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'ADMIN') {
             if ($_GET['page'] === 'admin') {
                 adminPage();
             } elseif ($_GET['page'] === 'addPost') {
@@ -87,7 +87,7 @@ try {
             }
         }
         // Admin section
-        elseif ($_SESSION['role'] === 'ADMIN') {
+        elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'ADMIN') {
             if ($_GET['action'] === 'addPost') {
                 if (!empty($_POST['title']) &&
                     !empty($_POST['header_content']) &&
@@ -129,7 +129,7 @@ try {
                 }
             } elseif ($_GET['action'] === 'validateComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    validateComment($_GET['id']);                    
+                    validateComment($_GET['id']);
                 } else {
                     throw new Exception('Aucun commentaire spécifié.');
                 }
@@ -138,7 +138,6 @@ try {
     } else {
         home();
     }
-}
-catch(Exception $e) {
+} catch (Exception $e) {
     error($e);
 }
