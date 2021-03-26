@@ -1,3 +1,4 @@
 public/img/
 vendor/
 composer.phar
+config/config.ini
