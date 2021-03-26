@@ -15,8 +15,7 @@ function login(string $username, string $password): void
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
         home();
-    }
-    else {
+    } else {
         loginPage('Nom d\'utilisateur ou mot de passe incorrect', 'danger');
     }
 }
