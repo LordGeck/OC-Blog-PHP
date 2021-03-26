@@ -11,10 +11,12 @@
                     <h1>Blog</h1>
                     <span class="subheading">Liste des publications</span>
                     <br>
-                    <?php 
+                    <?php
                     if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
                     ?>
-                    <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">Nouvelle publication</a>
+                    <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">
+                        Nouvelle publication
+                    </a>
                     <?php
                     }
                     ?>
@@ -28,8 +30,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <?php
-            while ($data = $blogPosts->fetch())
-            {
+            while ($data = $blogPosts->fetch()) {
             ?>
             <div class="post-preview">
                 <a href="index.php?page=post&amp;id=<?= $data['id'] ?>">
@@ -40,7 +41,9 @@
                         <?= htmlspecialchars($data['header_content']) ?>
                     </h3>
                 </a>
-                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?></p>
+                <p class="post-meta">
+                    Publié le <?= htmlspecialchars($data['update_date']) ?>
+                </p>
             </div>
             <hr>
             <?php

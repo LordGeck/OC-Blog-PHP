@@ -22,7 +22,8 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Titre</label>
-                        <input type="text" class="form-control" placeholder="Titre" name="title" value="<?= htmlspecialchars($blogPost['title']) ?>">
+                        <input type="text" class="form-control" placeholder="Titre" name="title"
+                            value="<?= htmlspecialchars($blogPost['title']) ?>">
                     </div>
                 </div>
                 <div class="control-group">

@@ -7,8 +7,7 @@
             ?>
                 <div class="alert alert-danger" role="alert"><?= $message ?></div>
             <?php
-                }
-                elseif ($type === 'success') {
+                } elseif ($type === 'success') {
             ?>
                 <div class="alert alert-success" role="alert"><?= $message ?></div>
             <?php
