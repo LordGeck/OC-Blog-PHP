@@ -44,7 +44,8 @@
                         Le <?= htmlspecialchars($comment['update_date']) ?>
                     </h6>
                     <p class="card-text"><?= htmlspecialchars($comment['content']) ?></p>
-                    <a class="btn btn-secondary text-center" href="index.php?action=validateComment&amp;id=<?= $comment['id'] ?>" role="button">
+                    <a class="btn btn-secondary text-center"
+                        href="index.php?action=validateComment&amp;id=<?= $comment['id'] ?>" role="button">
                         Valider
                     </a>
                 </div>

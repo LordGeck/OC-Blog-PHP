@@ -22,37 +22,43 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Nom d'utilisateur</label>
-                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" name="username">
+                        <input type="text" class="form-control"
+                            placeholder="Nom d'utilisateur" name="username">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Adresse email</label>
-                        <input type="email" class="form-control" placeholder="Adresse email" name="email">
+                        <input type="email" class="form-control"
+                            placeholder="Adresse email" name="email">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Prénom</label>
-                        <input type="text" class="form-control" placeholder="Prénom" name="firstname">
+                        <input type="text" class="form-control"
+                            placeholder="Prénom" name="firstname">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Nom de famille</label>
-                        <input type="text" class="form-control" placeholder="Nom de famille" name="lastname">
+                        <input type="text" class="form-control"
+                            placeholder="Nom de famille" name="lastname">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Mot de passe</label>
-                        <input type="password" class="form-control" placeholder="Mot de passe" name="password">
+                        <input type="password" class="form-control"
+                            placeholder="Mot de passe" name="password">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Confirmer mot de passe</label>
-                        <input type="password" class="form-control" placeholder="Confirmer mot de passe" name="password_conf">
+                        <input type="password" class="form-control"
+                            placeholder="Confirmer mot de passe" name="password_conf">
                     </div>
                 </div>
                 <br>

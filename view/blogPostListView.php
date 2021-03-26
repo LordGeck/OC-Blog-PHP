@@ -14,7 +14,9 @@
                     <?php
                     if (isset($_SESSION['username']) && $_SESSION['role'] === 'ADMIN') {
                     ?>
-                    <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">Nouvelle publication</a>
+                    <a class="btn btn-secondary" href="/index.php?page=addPost" role="button">
+                        Nouvelle publication
+                    </a>
                     <?php
                     }
                     ?>
@@ -39,7 +41,9 @@
                         <?= htmlspecialchars($data['header_content']) ?>
                     </h3>
                 </a>
-                <p class="post-meta">Publié le <?= htmlspecialchars($data['update_date']) ?></p>
+                <p class="post-meta">
+                    Publié le <?= htmlspecialchars($data['update_date']) ?>
+                </p>
             </div>
             <hr>
             <?php
