@@ -30,8 +30,7 @@ class UserManager extends Manager
         string $firstname,
         string $lastname,
         string $passwordHash
-        ): bool
-    {
+    ): bool {
         $request = $this->database->prepare('INSERT INTO users
             (username, email, firstname, lastname, password_hash)
             VALUES(?, ?, ?, ?, ?)');

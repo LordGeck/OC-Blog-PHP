@@ -14,8 +14,7 @@ function signup(
     string $lastname,
     string $password,
     string $passwordConf
-    ): void
-{
+): void {
     $userManager = new UserManager();
     $user = $userManager->checkUser($username, $email);
     if ($user) {
