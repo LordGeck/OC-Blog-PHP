@@ -24,7 +24,13 @@ class UserManager extends Manager
         return $request->fetch();
     }
 
-    public function addUser(string $username, string $email, string $firstname, string $lastname, string $passwordHash): bool
+    public function addUser(
+        string $username,
+        string $email,
+        string $firstname,
+        string $lastname,
+        string $passwordHash
+        ): bool
     {
         $request = $this->database->prepare('INSERT INTO users
             (username, email, firstname, lastname, password_hash)
