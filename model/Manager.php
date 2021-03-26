@@ -10,7 +10,10 @@ class Manager
         $dbLogin = parse_ini_file('config/config.ini', true);
         $dbLogin = $dbLogin['database'];
 
-        $this->database = new PDO('mysql:host=localhost;dbname=php_blog;charset=utf8',
-            $dbLogin['username'], $dbLogin['password']);
+        $this->database = new PDO(
+            'mysql:host=localhost;dbname=php_blog;charset=utf8',
+            $dbLogin['username'],
+            $dbLogin['password']
+        );
     }
 }
