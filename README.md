@@ -3,7 +3,7 @@
 
 Blog de développeur fait dans le cadre de la formation Openclassroom Développeur d'application - PHP / Symfony
 
-## Information du projet 
+## Information
 
 * Technologies utilisées
 * * Php 8.0.0
