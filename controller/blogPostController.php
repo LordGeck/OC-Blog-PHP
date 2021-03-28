@@ -34,7 +34,7 @@ function addBlogPost(string $title, string $headerContent, string $mainContent, 
 {
     $blogPostManager = new BlogPostManager();
     $blogPostManager->addBlogPost($title, $headerContent, $mainContent, $username);
-    blogPostList();
+    blogPostList('Article créé avec succès', 'success');
 }
 
 function editBlogPostPage(string $message = null, string $type = null): void
