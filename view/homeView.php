@@ -8,8 +8,9 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Bienvenu sur mon blog.</h1>
-                    <span class="subheading">Je développe en des applications en PHP.</span>
+                    <img src="public/img/photo.jpg" class="col-lg-6 col-md-8 col-sm-7 img-fluid photo" alt="Photo">
+                    <h1>Hyacinthe Bres</h1>
+                    <span class="subheading">Développeur d'applications PHP</span>
                 </div>
             </div>
         </div>
@@ -19,7 +20,18 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <h2>Me contacter :</h2>
+            <a href="https://drive.google.com/file/d/1PzBgUxw2GWNgOGE-2ssFYtass3l12DCL/view" target="_blank">
+                <h3 class="text-center">Mon CV</h3>
+                <img src="public/img/HB_CV.jpg" class="col-lg-4 col-md-6 img-thumbnail mx-auto d-block" alt="CV">
+            </a>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="text-center">Me contacter :</h2>
             <form action="index.php?action=sendMail" method="post">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
