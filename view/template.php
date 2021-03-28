@@ -25,6 +25,7 @@
             type='text/css'>
         <!-- Custom styles for this template -->
         <link href="public/css/clean-blog.min.css" rel="stylesheet">
+        <link href="public/css/php-blog.css" rel="stylesheet">
     </head>
     <body>
         <!-- Navigation-->
@@ -82,15 +83,7 @@
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="#">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.linkedin.com/in/hyacinthe-bres-793031b9/">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -98,7 +91,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://github.com/LordGeck">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
