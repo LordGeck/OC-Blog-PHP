@@ -18,3 +18,7 @@ header.masthead .site-heading h1 {
 img.photo {
   border-radius: 50%;
 }
+
+textarea.post {
+  min-height:400px;
+}

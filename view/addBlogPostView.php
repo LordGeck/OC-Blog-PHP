@@ -34,7 +34,7 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Article</label>
-                        <textarea class="form-control" placeholder="Article" name="main_content"></textarea>
+                        <textarea class="form-control post" placeholder="Article" name="main_content"></textarea>
                     </div>
                 </div>
                 <br>
