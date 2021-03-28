@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Hyacinthe Bres</h1>
-                    <span class="subheading">Développeur PHP</span>
+                    <h1>Bienvenu sur mon blog.</h1>
+                    <span class="subheading">Je développe en des applications en PHP.</span>
                 </div>
             </div>
         </div>
