@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="site-heading">
+                <div class="post-heading">
                     <h1>Edition de : <?= htmlspecialchars($blogPost['title']) ?></h1>
                 </div>
             </div>
@@ -29,16 +29,20 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Chapô</label>
-                        <textarea class="form-control" placeholder="Chapô" name="header_content">
-                            <?= htmlspecialchars($blogPost['header_content']) ?>
+                        <textarea
+                            class="form-control"
+                            placeholder="Chapô"
+                            name="header_content"><?= htmlspecialchars($blogPost['header_content']) ?>
                         </textarea>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Article</label>
-                        <textarea class="form-control" placeholder="Article" name="main_content">
-                            <?= htmlspecialchars($blogPost['main_content']) ?>
+                        <textarea
+                            class="form-control"
+                            placeholder="Article"
+                            name="main_content"><?= htmlspecialchars($blogPost['main_content']) ?>
                         </textarea>
                     </div>
                 </div>

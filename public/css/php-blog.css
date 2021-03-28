@@ -1,0 +1,20 @@
+/*!
+ * Theme custominsation
+ */
+
+header.masthead .page-heading h1,
+header.masthead .site-heading h1 {
+  font-size: 40px;
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .page-heading h1,
+  header.masthead .site-heading h1 {
+    font-size: 50px;
+  }
+}
+
+img.photo {
+  border-radius: 50%;
+}
