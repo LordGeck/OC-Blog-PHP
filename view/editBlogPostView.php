@@ -40,7 +40,7 @@
                     <div class="form-group floating-label-form-group controls">
                         <label>Article</label>
                         <textarea
-                            class="form-control"
+                            class="form-control post"
                             placeholder="Article"
                             name="main_content"><?= htmlspecialchars($blogPost['main_content']) ?>
                         </textarea>
