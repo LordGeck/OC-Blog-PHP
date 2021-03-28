@@ -8,7 +8,6 @@ class BlogPostManager extends Manager
     {
         return $this->database->query('SELECT id,
             title,
-            status,
             DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date,
             DATE_FORMAT(update_date, \'%d/%m/%Y à %Hh%imin%ss\') AS update_date,
             header_content
@@ -20,7 +19,6 @@ class BlogPostManager extends Manager
     {
         $request = $this->database->prepare('SELECT id,
             title,
-            status,
             DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date,
             DATE_FORMAT(update_date, \'%d/%m/%Y à %Hh%imin%ss\') AS update_date,
             header_content,
